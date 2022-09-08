@@ -61,7 +61,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
       createPage({
         path: `/${page.slug}/`,
         component: require.resolve('./src/templates/page.tsx'),
-        context: { page, pages: allPages.map(item => ({id: item.id, slug: item.slug, name: item.name})) },
+        context: { page, pages: [...allPages.map(item => ({id: item.id, slug: item.slug, name: item.name}))] },
       })
     })
 }
