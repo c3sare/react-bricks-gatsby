@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { types } from 'react-bricks'
+import { Pagex } from '../templates/page'
 
 interface LayoutProps {
-  allPages: types.Page[]
+  pages: Pagex[]
 }
 
-const Header: React.FC<LayoutProps> = ({ allPages }) => (
+const Header: React.FC<LayoutProps> = ({ pages }) => (
   <header
     className="bg-white sm:h-20 py-5 border-b sm:sticky top-0"
     style={{ zIndex: '9' }}
@@ -21,9 +22,10 @@ const Header: React.FC<LayoutProps> = ({ allPages }) => (
           />
           <div className="sm:ml-8 flex space-x-5">
             <Link to="/" className="text-gray-500 hover:text-pink-700">
-              {allPages.find((item) => item.slug === 'home')?.name}
+              {pages?.find((item) => item.slug === 'home')?.name ||
+                'Strona Główna'}
             </Link>
-            {allPages.map((page) => (
+            {pages?.map((page) => (
               <React.Fragment key={page.id}>
                 {page.slug !== 'home' ? (
                   <Link

@@ -9,16 +9,22 @@ import Layout from '../components/layout'
 import ErrorNoKeys from '../components/errorNoKeys'
 import ErrorNoHomePage from '../components/errorNoHomePage'
 
+export interface Pagex {
+  id: number
+  slug: string
+  name: string
+}
+
 interface ReactBricksPageProps {
   pageContext: {
     page: types.Page
     error: string
-    allPages: types.Page[]
+    pages: Pagex[]
   }
 }
 
 const Page: React.FC<ReactBricksPageProps> = ({
-  pageContext: { page, error, allPages },
+  pageContext: { page, error, pages },
 }) => {
   const { pageTypes, bricks } = useContext(ReactBricksContext)
 
@@ -27,7 +33,7 @@ const Page: React.FC<ReactBricksPageProps> = ({
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
 
   return (
-    <Layout allPages={allPages}>
+    <Layout pages={pages}>
       {pageOk && <PageViewer page={pageOk} />}
       {error === 'NOKEYS' && <ErrorNoKeys />}
       {error === 'NOPAGE' && <ErrorNoHomePage />}

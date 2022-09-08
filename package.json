@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-reactbricks",
+  "name": "react-bricks-gatsby",
   "private": true,
-  "description": "A simple starter to get started quickly with React Bricks and Gatsby",
+  "description": "",
   "version": "1.3.5",
-  "author": "Matteo Frana <f2@f2.net>",
+  "author": "",
   "dependencies": {
     "@types/react": "^18.0.15",
     "bluebird": "^3.7.2",
