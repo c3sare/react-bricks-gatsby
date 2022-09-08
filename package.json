@@ -7,9 +7,13 @@
   "dependencies": {
     "@types/react": "^18.0.15",
     "bluebird": "^3.7.2",
+    "dayjs": "^1.11.5",
+    "email-validator": "^2.0.4",
     "gatsby": "^4.19.1",
     "gatsby-plugin-manifest": "^4.19.0",
     "gatsby-plugin-offline": "^5.19.0",
+    "jsonp": "^0.2.1",
+    "pigeon-maps": "^0.21.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-bricks": "^3.3.1",

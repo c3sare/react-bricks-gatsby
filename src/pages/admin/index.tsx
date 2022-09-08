@@ -1,6 +1,5 @@
 import React from 'react'
 import { Admin, Login } from 'react-bricks'
-import { Helmet } from 'react-helmet'
 
 const AdminLogin: React.FC = () => {
   return (
@@ -9,6 +8,10 @@ const AdminLogin: React.FC = () => {
       <Login />
     </Admin>
   )
+}
+
+export const Head = () => {
+  return <title>Login</title>
 }
 
 export default AdminLogin
