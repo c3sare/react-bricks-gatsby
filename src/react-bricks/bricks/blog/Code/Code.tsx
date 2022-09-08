@@ -8,14 +8,6 @@ import Section from '../layout/Section'
 import PrismCode from './PrismCode'
 import Styles from './Styles'
 
-require('prismjs/components/prism-typescript')
-require('prismjs/components/prism-bash')
-require('prismjs/components/prism-jsx')
-require('prismjs/components/prism-tsx')
-require('prismjs/plugins/line-numbers/prism-line-numbers.js')
-require('prismjs/plugins/show-language/prism-show-language.js')
-require('prismjs/plugins/line-highlight/prism-line-highlight.js')
-
 export interface CodeBrickProps {
   language: string
   dataline?: string
