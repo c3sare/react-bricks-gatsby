@@ -11,7 +11,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, pages }) => {
   return (
-    <div className="flex flex-col h-screen justify-between antialiased">
+    <div className="flex flex-col justify-between antialiased" style={{minHeight: '100vh'}}>
       <Header pages={pages} />
       <main className="mb-auto">{children}</main>
       <Footer />

@@ -11,13 +11,15 @@ interface PagePrevInter {
 
 const NotFoundPage: React.FC<PagePrevInter> = ({pageContext: {pages}}) => (
   <Layout pages={pages}>
-    <h1>NOT FOUND</h1>
-    <p>This page doesn't exist.</p>
+    <div style={{textAlign: 'center', display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center'}}>
+      <h1>Nie znaleziono</h1>
+      <p>Taka strona nie istnieje</p>
+    </div>
   </Layout>
 )
 
 export const Head = () => {
-  return <title>404: Not found</title>
+  return <title>404: Nie znaleziono</title>
 }
 
 export default NotFoundPage

@@ -48,7 +48,10 @@ export const Head: React.FC<ReactBricksPageProps> = ({
     <>
       <title>{page.name}</title>
       <meta name="description" content={page.meta.description} />
-      {/* <meta name="keywords" content={page.data?.keywords || ""} /> */}
+      <meta name="keywords" content={page.tags.join(" ")}/>
+      <meta name="title" content={page.meta.title}/>
+      <meta name="language" content={page.meta.language}/>
+      <meta name="og:image" content={page.meta.featuredImage}/>
     </>
   )
 }

@@ -44,7 +44,13 @@ exports.createPages = async ({ actions: { createPage } }) => {
     { concurrency: 2 }
   )
 
-  const menuElements = [...allPages.map(item => ({id: item.id, slug: item.slug, name: item.name}))]
+  const menuElements = [...allPages.map(item => ({
+    id: item.id,
+    slug: item.slug,
+    name: item.name,
+    tags: item.tags,
+    meta: item.meta,
+  }))]
 
   // Home Page
   const homePage = allPagesWithContent.find((page) => page.slug === 'home')
