@@ -44,13 +44,15 @@ exports.createPages = async ({ actions: { createPage } }) => {
     { concurrency: 2 }
   )
 
+  const menuElements = [...allPages.map(item => ({id: item.id, slug: item.slug, name: item.name}))]
+
   // Home Page
   const homePage = allPagesWithContent.find((page) => page.slug === 'home')
   if (homePage) {
     createPage({
       path: `/`,
       component: require.resolve('./src/templates/page.tsx'),
-      context: { page: homePage, pages: [...allPages.map(item => ({id: item.id, slug: item.slug, name: item.name}))] },
+      context: { page: homePage, pages: menuElements },
     })
   }
 
@@ -61,7 +63,19 @@ exports.createPages = async ({ actions: { createPage } }) => {
       createPage({
         path: `/${page.slug}/`,
         component: require.resolve('./src/templates/page.tsx'),
-        context: { page, pages: [...allPages.map(item => ({id: item.id, slug: item.slug, name: item.name}))] },
+        context: { page, pages: menuElements },
       })
     })
+
+  createPage({
+    path: `/preview/`,
+    component: require.resolve('./src/templates/preview.tsx'),
+    context: { pages: menuElements },
+  })
+
+  createPage({
+    path: `/404`,
+    component: require.resolve('./src/templates/404.tsx'),
+    context: { pages: menuElements },
+  })
 }
